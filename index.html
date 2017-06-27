@@ -43,15 +43,21 @@
                 <h5><i class="fa fa-phone"></i><a href="tel:0123 456 789">+886 988157128</a></h5>
             </div><!--//profile-->  
             <div class='btn-group btn-group-sm pull-right'>
-                <button type="button" class="btn btn-default btn-lg active" lang="en">English</button>
-                <button type="button" class="btn btn-default btn-lg" lang="zh-tw">繁體中文</button>
+                <button type="button" class="btn btn-default btn-lg active" onclick="myFunction('en')">English</button>
+                <button type="button" class="btn btn-default btn-lg" onclick="myFunction('zh-tw')">繁體中文</button>
             </div>           
         </div><!--//container-->
     </header><!--//header-->
 <script type="text/javascript">
-$(document).on('click', '.header .btn', function() {
-  var lang = '?lang=' + $(this).lang();
-    window.location.search += lang;  
+function myFunction(lang) {
+    var hp_lang = '';
+    if (lang == "zh-tw") {
+        hp_lang = '_' + lang;
+        window.location.href = 'index' + hp_lang +'.html';
+    }
+    // var lang = '?lang=' + lang;
+    // window.location.search += lang;
+
 }
 </script>
     <div class="container sections-wrapper">
